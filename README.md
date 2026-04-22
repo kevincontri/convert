@@ -1,4 +1,4 @@
-# Convert
+# Convert v1.0
 
 A minimal currency converter that converts foreign currencies into Brazilian Reais (BRL).
 
