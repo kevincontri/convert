@@ -34,8 +34,7 @@ Open `index.html` in a browser, enter an amount, select a currency, and click **
 
 # Future Improvements:
 
-- Live exchange rates — Fetch rates from an API instead of hardcoded
-  constants. Rates go stale fast.
+- Live exchange rates — Fetch rates from an API instead of hardcoded constants
 - Bidirectional conversion — Let users convert from BRL to a foreign currency as well, or freely swap the direction with a toggle button.
 - Input formatting — Format the amount field with thousand separators as the user types (e.g. 1000 → 1.000), matching the Brazilian number format already used in the output.
 - Conversion history — Add a small in-session log of recent conversions displayed below the result, so the user can compare rates without redoing each calculation manually.
