@@ -1,10 +1,3 @@
-// Constant exchange rates for USD, EUR, and GBP to BRL
-const USD = 4.98
-const EUR = 5.85
-const GBP = 6.72
-const RUB = 0.066
-const CNY = 0.73
-
 // Selecting DOM elements for form, input fields, and result display
 const form = document.querySelector("form")
 const amount = document.getElementById("amount");
@@ -26,23 +19,33 @@ form.onsubmit = (e) => {
 
   switch (currency.value) {
     case "USD":
-      convertCurrency(amount.value, USD, "US$")
+      getExchangeRates("USD").then((rate) => convertCurrency(amount.value, rate, "US$"))
       break
     case "EUR":
-      convertCurrency(amount.value, EUR, "€")
+      getExchangeRates("EUR").then((rate) => convertCurrency(amount.value, rate, "€"))
       break
     case "GBP":
-      convertCurrency(amount.value, GBP, "£")
+      getExchangeRates("GBP").then((rate) => convertCurrency(amount.value, rate, "£"))
       break
     case "RUB":
-      convertCurrency(amount.value, RUB, "₽")
+      getExchangeRates("RUB").then((rate) => convertCurrency(amount.value, rate, "₽"))
       break
     case "CNY":
-      convertCurrency(amount.value, CNY, "¥")
+      getExchangeRates("CNY").then((rate) => convertCurrency(amount.value, rate, "¥"))
       break
     }
 }
 
+/**
+ * Fetches live exchange rates for a given currency
+ * @param {string} currency 
+ * @returns {Promise<number>} 
+ */
+async function getExchangeRates(currency) {
+  const response = await fetch(`https://v6.exchangerate-api.com/v6/8bcecf1f9401787bd706089c/latest/${currency}`)
+  const data = await response.json();
+  return data.conversion_rates.BRL;
+}
 
 /** 
  * Function to convert currency based on user input and selected currency, then display the result in Brazilian Reais (BRL).
