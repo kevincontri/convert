@@ -4,15 +4,6 @@ A minimal currency converter that converts foreign currencies into Brazilian Rea
 
 [Visit The Site!](https://kevincontri.github.io/convert/) <br>
 
-## Project Demo:
-
-<div align="center">
-  <h3>Project Video Demo:</h3>
-  <video src="https://github.com/user-attachments/assets/15df82b5-70ea-44e7-b188-23e15943c286" width="640" controls >
-    Seu navegador não suporta vídeo.
-  </video>
-</div>
-
 ## Features
 
 - Converts USD, EUR, GBP, RUB, and CNY to BRL
